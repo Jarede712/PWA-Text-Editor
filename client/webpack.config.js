@@ -18,6 +18,7 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE',
+        favicon: './favicon.ico',
       }),
 
       new InjectManifest({
