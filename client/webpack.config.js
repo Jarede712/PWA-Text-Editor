@@ -18,12 +18,11 @@ module.exports = () => {
       new HtmlWebpackPlugin({
         template: './index.html',
         title: 'JATE',
-        favicon: './favicon.ico',
       }),
 
       new InjectManifest({
         swSrc: './src-sw.js',
-        swDest: 'sw.js',
+        swDest: 'service-worker.js',
       }),
       new WebpackPwaManifest({
         name: 'JATE PWA',
@@ -31,11 +30,12 @@ module.exports = () => {
         description: 'A PWA Text Editor',
         background_color: '#ffffff',
         theme_color: '#ffffff',
+        publicPath: '/',
         icons: [
           {
             src: path.resolve('./src/images/logo.png'),
             sizes: [96, 128, 192, 256, 384, 512],
-            destination: path.join('src', 'icons'),
+            destination: path.join('assets', 'icons'),
           },
         ],
       }),
